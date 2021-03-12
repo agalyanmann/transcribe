@@ -1,7 +1,6 @@
 import apiToken from './config';
 import './App.css';
 import { useRef, useState } from 'react';
-import { getByDisplayValue } from '@testing-library/dom';
 
 function App() {
   const [statusUpdate, setStatusUpdate] = useState('Submit your audio!');
