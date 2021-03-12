@@ -47,8 +47,9 @@ function App() {
       .catch(error => console.log(error));
   }
 
-  const clickHandler = () => {
+  const clickHandler = (event) => {
 
+    event.preventDefault();
     const userInput = input.current.value;
 
     submitAudio(userInput);
@@ -63,8 +64,10 @@ function App() {
       <div className='transcript'>
         <p> {statusUpdate} </p>
       </div>
-      <input ref={input} type='text' id='url' name='url' placeholder='Paste your URL here' />
-      <input type='submit' onClick={clickHandler} />
+      <form onSubmit={clickHandler}>
+        <input ref={input} autoComplete='off' type='text' id='url' name='url' placeholder='Paste your URL here' />
+        <button type='submit'>Start Transcribing</button>
+      </form>
     </div>
   );
 }
