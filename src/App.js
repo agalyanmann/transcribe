@@ -40,7 +40,11 @@ function App() {
         if (json.status === 'completed') {
           setStatusUpdate(json.text);
           console.log(json);
+        } else if(json.status === 'error') {
+          console.log(json);
+          setStatusUpdate(`There was an error: ${json.error}`);
         } else {
+          setStatusUpdate(`Your file is ${json.status}`)
           getTranscript(id);
         }
       })
