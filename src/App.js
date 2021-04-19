@@ -1,6 +1,6 @@
-import apiToken from './config';
 import './App.css';
 import { useRef, useState } from 'react';
+const { apiToken } = require('./config.json');
 
 function App() {
   const [statusUpdate, setStatusUpdate] = useState('Submit your audio!');
@@ -40,7 +40,7 @@ function App() {
         if (json.status === 'completed') {
           setStatusUpdate(json.text);
           console.log(json);
-        } else if(json.status === 'error') {
+        } else if (json.status === 'error') {
           console.log(json);
           setStatusUpdate(`There was an error: ${json.error}`);
         } else {
