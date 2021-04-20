@@ -2,13 +2,15 @@
   text-align: center;
   width: 90%;
   margin: 0 auto;
-  /* background-color: ghostwhite; */
 }
 
 h1{
   color: #2d3436;
 }
 
+ul{
+  list-style: none;
+}
 
 .transcript{
   box-shadow:  0px 9px 19px 9px rgba(0,0,0,0)  ;
